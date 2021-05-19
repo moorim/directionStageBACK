@@ -13,5 +13,5 @@ public interface societemetier {
     public List<societe> getsociete();
     public void deletesociete(Long id);
     public void modifysociete(Long id,societe e);
-    public Optional<societe> getsocieteById(Long id);
+    public societe getsocieteById(Long id);
 }

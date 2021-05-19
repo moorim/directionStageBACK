@@ -16,11 +16,10 @@ public class societe implements Serializable {
     private String domaine;
     private String type;
     @JsonManagedReference(value = "encad")
-    @JsonIgnore
-    @OneToMany(mappedBy = "societe",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "societe",cascade = CascadeType.ALL,orphanRemoval=true)
     private Collection<encadrant> encadrants;
     @JsonManagedReference(value = "stage2")
-    @OneToMany(mappedBy = "societe",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "societe",cascade = CascadeType.ALL,orphanRemoval=true)
     private Collection<stage> stages;
     public societe() {
     }

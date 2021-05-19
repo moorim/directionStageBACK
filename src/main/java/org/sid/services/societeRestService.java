@@ -22,7 +22,7 @@ public class societeRestService {
         return entrepriseRepository.savesociete(e);
     }
 
-    @RequestMapping(value = "/societes/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/societes/{id}", method = RequestMethod.DELETE)
     public boolean supprimer(@PathVariable Long s) {
         entrepriseRepository.deletesociete(s);
         return true;

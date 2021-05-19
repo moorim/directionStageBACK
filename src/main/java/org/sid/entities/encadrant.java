@@ -21,17 +21,17 @@ public class encadrant implements Serializable {
     private Long tel;
     private String post;
     @JsonManagedReference(value = "etud")
-    @OneToMany(mappedBy = "encadrant",fetch = FetchType.LAZY)
-    @JsonIgnore
+    @OneToMany(mappedBy = "encadrant",cascade = CascadeType.ALL,orphanRemoval=true)
+
     private Collection<etudiant> etudiants;
     @JsonBackReference(value = "encad")
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "codeSociete" ,insertable = true,updatable = true)
-    @JsonIgnore
+
     private societe societe;
     @JsonManagedReference(value = "stage1")
-    @OneToMany(mappedBy = "encadrant",fetch = FetchType.LAZY,cascade = {CascadeType.ALL})
-    @JsonIgnore
+    @OneToMany(mappedBy = "encadrant",cascade = CascadeType.ALL,orphanRemoval=true)
+
     private Collection<stage> stages;
 
     public encadrant() {

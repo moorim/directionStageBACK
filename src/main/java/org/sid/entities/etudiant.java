@@ -19,9 +19,9 @@ public class etudiant implements Serializable {
     private String niveau;
     private String specialite;
     @JsonBackReference(value = "etud")
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "codeEncadrant",insertable = true,updatable = true)
-    @JsonIgnore
+
     private encadrant encadrant;
     public etudiant() {
     }

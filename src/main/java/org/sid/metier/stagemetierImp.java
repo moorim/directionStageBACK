@@ -2,6 +2,7 @@ package org.sid.metier;
 
 import org.sid.Dao.stageRepository;
 import org.sid.entities.stage;
+import org.sid.exception.StageNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +35,7 @@ public class stagemetierImp implements stagemetier{
     }
 
     @Override
-    public Optional<stage> getStageById(Long id) {
-        return stageRepository.findById(id);
+    public stage getStageById(Long id) {
+        return stageRepository.findById(id).orElseThrow(()->new StageNotFoundException("Stageby id"+id+"not found"));
     }
 }

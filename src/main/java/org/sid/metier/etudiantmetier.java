@@ -13,5 +13,5 @@ public interface etudiantmetier {
     public List<etudiant> getEtudiant();
     public void deleteEtudiant(Long id);
     public void modifyEtudiant(Long id,etudiant e);
-    public Optional<etudiant> getEtudiantById(Long id);
+    public etudiant getEtudiantById(Long id);
 }

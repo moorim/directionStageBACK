@@ -13,5 +13,5 @@ public interface encadrantmetier {
     public List<encadrant> getEncadrant();
     public void deleteEncadrant(Long id);
     public void modifyEncadrant(Long id,encadrant e);
-    public Optional<encadrant> getEncadrantById(Long id);
+    public encadrant getEncadrantById(Long id);
 }

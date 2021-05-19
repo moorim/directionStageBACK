@@ -1,6 +1,7 @@
 package org.sid.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,13 +16,17 @@ public class stage implements Serializable {
     private String titre ;
     private Date date_debut;
     private Date date_fin;
+
     @JsonBackReference(value = "stage1")
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(fetch = FetchType.LAZY,optional=true)
     @JoinColumn(name = "codeEncadrant",insertable = true,updatable = true)
     private  encadrant encadrant;
+
+
     @JsonBackReference(value = "stage2")
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(fetch = FetchType.LAZY,optional=true)
     @JoinColumn(name="codeSociete",insertable = true,updatable = true)
+
     private societe societe;
 
 

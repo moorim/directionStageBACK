@@ -12,6 +12,6 @@ public interface stagemetier {
     public List<stage> getstages();
     public void deletestage(Long id);
     public void modifystage(Long id,stage s);
-    public Optional<stage> getStageById(Long id);
+    public stage getStageById(Long id);
 
 }

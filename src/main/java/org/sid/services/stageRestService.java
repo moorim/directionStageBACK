@@ -32,5 +32,5 @@ public class stageRestService {
     public void modifystage(@PathVariable Long id,@RequestBody stage s){ stagemetierImp.modifystage(id,s);}
 
     @RequestMapping(value = "/stages/{id}" ,method= RequestMethod.GET)
-    public Optional<stage> getStageById(@PathVariable Long id){return  stagemetierImp.getStageById(id);}
+    public stage getStageById(@PathVariable Long id){return  stagemetierImp.getStageById(id);}
 }

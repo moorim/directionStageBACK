@@ -26,5 +26,5 @@ public class etudiantRestService {
     public void modifyEtudiant(@PathVariable Long id,@RequestBody etudiant e){ etudiantmetierImp.modifyEtudiant(id,e); }
 
     @RequestMapping(value = "/etudiants/{id}" ,method= RequestMethod.GET)
-    public Optional<etudiant> getEtudiantById(@PathVariable Long id){return etudiantmetierImp.getEtudiantById(id);}
+    public etudiant getEtudiantById(@PathVariable Long id){return etudiantmetierImp.getEtudiantById(id);}
 }

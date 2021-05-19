@@ -27,5 +27,5 @@ public class encadrantRestService {
     public void modifyEncadrant(@PathVariable Long id,@RequestBody encadrant e){encadrantmetierImp.modifyEncadrant(id,e);}
 
     @RequestMapping(value = "/encadrants/{id}" ,method= RequestMethod.GET)
-    public Optional<encadrant> getEncadrantById(@PathVariable Long id){return encadrantmetierImp.getEncadrantById(id);}
+    public encadrant getEncadrantById(@PathVariable Long id){return encadrantmetierImp.getEncadrantById(id);}
 }
