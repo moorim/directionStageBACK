@@ -1,7 +1,6 @@
 package org.sid.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -16,7 +15,7 @@ public class stage implements Serializable {
     private String titre ;
     private Date date_debut;
     private Date date_fin;
-
+    private String domaine;
     @JsonBackReference(value = "stage1")
     @ManyToOne(fetch = FetchType.LAZY,optional=true)
     @JoinColumn(name = "codeEncadrant",insertable = true,updatable = true)
@@ -58,11 +57,20 @@ public class stage implements Serializable {
         this.societe = societe;
     }
 
-    public stage(long id_stage,String titre, Date date_debut, Date date_fin,encadrant encadrant, societe societe) {
+    public String getDomaine() {
+        return domaine;
+    }
+
+    public void setDomaine(String domaine) {
+        this.domaine = domaine;
+    }
+
+    public stage(long id_stage, String titre, Date date_debut, Date date_fin, String domaine, encadrant encadrant, societe societe) {
         super();
         this.id_stage = id_stage;
         this.date_debut = date_debut;
         this.date_fin = date_fin;
+        this.domaine = domaine;
         this.encadrant = encadrant;
         this.societe = societe;
         this.titre=titre;

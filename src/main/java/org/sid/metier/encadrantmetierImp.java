@@ -3,6 +3,7 @@ package org.sid.metier;
 import org.sid.Dao.encadrantRepository;
 import org.sid.Dao.etudiantRepository;
 import org.sid.entities.encadrant;
+import org.sid.exception.EncadrantNotFoundException;
 import org.sid.exception.StageNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,6 +40,6 @@ public class encadrantmetierImp implements encadrantmetier{
     @Override
     public encadrant getEncadrantById(Long id) {
         return encadrantRepository.findById(id).
-                orElseThrow(()->new StageNotFoundException("Stageby id"+id+"not found"));
+                orElseThrow(()->new EncadrantNotFoundException("Stageby id"+id+"not found"));
     }
 }

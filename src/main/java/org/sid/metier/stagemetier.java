@@ -13,5 +13,6 @@ public interface stagemetier {
     public void deletestage(Long id);
     public void modifystage(Long id,stage s);
     public stage getStageById(Long id);
+    public Long  countStage();
 
 }

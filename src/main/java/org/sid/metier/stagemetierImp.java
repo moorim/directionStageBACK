@@ -38,4 +38,9 @@ public class stagemetierImp implements stagemetier{
     public stage getStageById(Long id) {
         return stageRepository.findById(id).orElseThrow(()->new StageNotFoundException("Stageby id"+id+"not found"));
     }
+
+    @Override
+    public Long countStage() {
+        return stageRepository.count();
+    }
 }

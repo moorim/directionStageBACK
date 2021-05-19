@@ -33,4 +33,6 @@ public class stageRestService {
 
     @RequestMapping(value = "/stages/{id}" ,method= RequestMethod.GET)
     public stage getStageById(@PathVariable Long id){return  stagemetierImp.getStageById(id);}
+    @RequestMapping(value = "/countstages" ,method= RequestMethod.GET)
+    public Long count(){return  stagemetierImp.countStage();}
 }

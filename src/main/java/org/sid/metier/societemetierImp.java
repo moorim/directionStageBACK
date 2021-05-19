@@ -2,6 +2,7 @@ package org.sid.metier;
 
 import org.sid.Dao.societeRepository;
 import org.sid.entities.societe;
+import org.sid.exception.SocieteNotFoundException;
 import org.sid.exception.StageNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,6 +38,6 @@ public class societemetierImp implements societemetier{
 
     @Override
     public societe getsocieteById(Long id) {
-        return societeRepository.findById(id).orElseThrow(()->new StageNotFoundException("Stageby id"+id+"not found"));
+        return societeRepository.findById(id).orElseThrow(()->new SocieteNotFoundException("Stageby id"+id+"not found"));
     }
 }
