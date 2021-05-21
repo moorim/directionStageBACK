@@ -34,4 +34,9 @@ public class societeRestService {
         return entrepriseRepository.savesociete(e);
     }
 
+    @RequestMapping(value = "/countsocietes", method = RequestMethod.GET)
+    public Long count() {
+        return entrepriseRepository.count();
+    }
+
 }

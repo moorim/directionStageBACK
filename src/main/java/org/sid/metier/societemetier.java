@@ -14,4 +14,5 @@ public interface societemetier {
     public void deletesociete(Long id);
     public void modifysociete(Long id,societe e);
     public societe getsocieteById(Long id);
+    public Long count();
 }

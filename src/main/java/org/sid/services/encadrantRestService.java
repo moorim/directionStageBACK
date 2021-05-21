@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin("*")
 public class encadrantRestService {
     @Autowired
     private encadrantmetierImp encadrantmetierImp;
@@ -28,4 +29,9 @@ public class encadrantRestService {
 
     @RequestMapping(value = "/encadrants/{id}" ,method= RequestMethod.GET)
     public encadrant getEncadrantById(@PathVariable Long id){return encadrantmetierImp.getEncadrantById(id);}
+
+    @RequestMapping(value = "/countencadrants" ,method= RequestMethod.GET)
+    public Long count() {
+        return encadrantmetierImp.count();
+    }
 }

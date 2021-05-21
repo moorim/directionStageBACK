@@ -9,7 +9,7 @@ import java.util.Collection;
 
 @Entity
 public class societe implements Serializable {
-    @Id
+    @Id @GeneratedValue
     private Long rais_soc;
     private String adresse;
     private String libelle;

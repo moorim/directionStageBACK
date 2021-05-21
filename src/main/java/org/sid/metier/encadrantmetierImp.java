@@ -42,4 +42,9 @@ public class encadrantmetierImp implements encadrantmetier{
         return encadrantRepository.findById(id).
                 orElseThrow(()->new EncadrantNotFoundException("Stageby id"+id+"not found"));
     }
+
+    @Override
+    public Long count() {
+        return encadrantRepository.count();
+    }
 }

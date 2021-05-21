@@ -1,8 +1,5 @@
 package org.sid.entities;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -25,7 +22,7 @@ public class encadrant implements Serializable {
 
     private Collection<etudiant> etudiants;
     @JsonBackReference(value = "encad")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,optional=true)
     @JoinColumn(name = "codeSociete" ,insertable = true,updatable = true)
 
     private societe societe;

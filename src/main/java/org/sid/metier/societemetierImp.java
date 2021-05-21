@@ -40,4 +40,9 @@ public class societemetierImp implements societemetier{
     public societe getsocieteById(Long id) {
         return societeRepository.findById(id).orElseThrow(()->new SocieteNotFoundException("Stageby id"+id+"not found"));
     }
+
+    @Override
+    public Long count() {
+        return societeRepository.count();
+    }
 }
